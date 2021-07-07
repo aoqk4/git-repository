@@ -7,13 +7,10 @@
         <table>
             <thead>
                 <tr>
-                    <th width="100">SITE_ID</th>
-					<th width="100">USER_ID</th>
-					<th width="100">USER_PW</th>
-                    <th width="100">USER_EMAIL</th>
-					<th width="100">USER_NAME</th>
-                    <th width="100">USER_BRITH</th>
-                    <th width="100">YEAR</th>
+                    <th width="100">PIN</th>
+					<th width="100">CODE</th>
+					<th width="100">PW</th>
+                    <th width="100">EMAIL</th>
                 </tr>
             </thead>
     </body>
@@ -25,32 +22,22 @@
     $db_password = '1234';
 
     $db_server = new mysqli($db_hostname,  $db_username, $db_password, $db_database, 3306);
-    if (!$db_server)
-        echo "DB server connect Error<br>";
-    else
-        echo "DB server connect<br>";
 
-    $select = "SELECT * FROM sign_up2";
+    $select = "SELECT * FROM sign_up4";
     $result = mysqli_query($db_server, $select);
     while($board = $result->fetch_array())
     {
-        $SITE_ID = $board['SITE_ID'];
-        $USER_ID = $board['USER_ID'];
-        $USER_PW = $board['USER_PW'];
-        $USER_EMAIL = $board['USER_EMAIL'];
-        $USER_NAME = $board['USER_NAME'];
-        $USER_BRITH = $board['USER_BRITH'];
-        $USER_YEAR = $board['year'];
+        $PIN = $board['PIN'];
+        $CODE = $board['CODE'];
+        $PW = $board['PW'];
+        $EMAIL = $board['EMAIL'];
         echo <<<END
         <tbody>
         <tr>
-            <td width="100">$SITE_ID</td>
-            <td width="100">$USER_ID</td>
-            <td width="100">$USER_PW</td>
-            <td width="100">$USER_EMAIL</td>
-            <td width="100">$USER_NAME</td>
-            <td width="100">$USER_BRITH</td>
-            <td width="100">$USER_YEAR</td>
+            <td width="100">$PIN</td>
+            <td width="100">$CODE</td>
+            <td width="100">$PW</td>
+            <td width="100">$EMAIL</td>
         </tr>
         </tbody>
 END;
