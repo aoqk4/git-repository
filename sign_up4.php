@@ -5,7 +5,7 @@
     </head>
     <body>
         <form action = "/content/sign_up4_query.php" method = "post">
-            핀<br><input type="text" name="pin"></input><br>
+            아이디<br><input type="text" name="pin"></input><br>
             코드6자리<br><input type="text" name="code"></input><br>
             비밀번호<br><input type="text" name="pw"></input><br>
             이메일<br><input type="text" name="e_mail"></input><br>
