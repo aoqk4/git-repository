@@ -1,0 +1,54 @@
+<head>
+    <script>
+        var timerId = null;
+        score = 0;
+
+        function Rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function start() {
+            count = changeTo(Rand(0, 10),"num");
+            count1 = changeTo(Rand(0, 10),"num1");
+            count2 = changeTo(Rand(0, 10),"num2");
+            timerId = setTimeout(start, 100);
+        }
+
+        function stop() {
+            if (count1 == count2 && count2 == count3)
+            {
+                score = 100;
+
+            }
+            else if (count1 == count2 || count2 == count3 || count1 == count3)
+            {
+                score = 60;
+            }
+            else {
+                score = 0;
+            }
+            game_count++;
+            sum_score += score;
+            clearTimeout(timerId);
+        }
+
+        function changeTo(count, id_value) {
+            myNum = document.getElementById(id_value);
+            myNum.src = count + ".jpg";
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="start" onclick="start()">
+        <input type="button" value="stop" onclick="stop()">
+    </form>
+    <div>
+            <img src = "1.jpg" id = "num">
+            <img src = "1.jpg" id = "num1">
+            <img src = "1.jpg" id = "num2">
+    </div>
+</body>

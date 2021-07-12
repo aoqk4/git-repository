@@ -1,0 +1,17 @@
+<head>
+    <script>
+        function changeTo(myImg) {
+            var myNum = document.getElementById("num");
+            myNum.src = myImg;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="change 4" onclick="changeTo('4.jpg')">
+        <input type="button" value="change 2" onclick="changeTo('2.jpg')">
+    </form>
+    <div>
+        <img src = "2.jpg" id = "num">
+    </div>
+</body>

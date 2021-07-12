@@ -1,0 +1,38 @@
+<head>
+    <script>
+        count = 1;
+        document.write(count);
+        var timerId = null;
+        function start() {
+            count = changeTo(count);
+            timerId = setTimeout(start, 1000);
+        }
+        function stop() {
+            clearTimeout(timerId);
+        }
+        function changeTo(count) {
+            myNum = document.getElementById("num");
+                switch(count) {
+                case 1:
+                    myNum.src = count + ".jpg";
+                    return 2; 
+                case 2:
+                    myNum.src = count + ".jpg";
+                    return 3; 
+                case 3:
+                    myNum.src = count + ".jpg";
+                    return 1; 
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="start" onclick="start()">
+        <input type="button" value="stop" onclick="stop()">
+    </form>
+    <div>
+        <img src = "1.jpg" id = "num">
+    </div>
+</body>
