@@ -1,0 +1,25 @@
+<meta charset="utf-8"></meta>
+<script type="text/javascript" language="javascript">
+    function onfocus_event() {
+        alert("onfocus");
+    }
+    function onblur_event() {
+        alert("onblur");
+    }
+    function onchange_evnet() {
+        alert("oncahnge");
+    }
+</script>
+
+<form name="input_type" id="input_type" method="POST" >
+    <!-- <input type="text" value="포커스 얻을 시 실행" onfocus="onfocus_evnet();"> -->
+    <br />
+    <input type="text" value="포커스 잃을 시 실행" onfocus="onblur_event();">
+    <br />
+    <select name="atte_select_base" onchange="onchange_event()";>
+        <option value="base">기본</option>
+        <option value="apple">사과</option>
+        <option value="orange">오렌지</option>
+    </select>
+    <br />
+</form>

@@ -1,0 +1,30 @@
+<body>
+    <meta charset="utf-8"></meta>
+    <h1>스터디 회원 모집</h1>
+    <img src="logo.png" alt="HTML5 공식 로고">
+    <script>
+        myImg = document.getElementById("logo");
+        document.write("<p> 이미지 파일의 alt 텍스트는 <span>"
+             + myImg.alt + "</span>입니다.</p>");
+    </script>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<body2>
+    <meta charset="utf-8"></meta>
+    <h1>스터디 회원 모집</h1>
+    <p class="accent">신입생 대상</p>
+    <p><span class="accent">웹 표준기술</span>에 대해 같이공부할 스터디
+    회원을 모집 합니다</p>
+    <script>
+        mylist = document.getElementsByClassName("accent");
+        document.write("<hr>");
+        document.write("<h3>accent 클래스를 사용하는 리스트</h3>");
+        for (i = 0; i < mylist.length; i++) {
+            document.write(mylist[i].textContent + "<br>");
+        }
+    </script>
+</body2>

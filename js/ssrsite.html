@@ -1,0 +1,55 @@
+<head>
+    <meta charset="utf-8"></meta> 
+    <script>
+        var prizeArray = ["7", "8" ,"9","10","11"];
+        state = 0;
+        function Rand(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+
+        function check_no() {
+                for(i = 0; i < 5; i++)
+                {
+                    for(j = (i+1); j < 5; j++)
+                    {
+                        if(temp_array[i]==temp_array[j])
+                        {
+                            lotto_array[j] = Rand(0, 4);
+                            j--;
+                        }
+                    }
+                }
+            }
+        function shuffleArray(inputArray) {
+        inputArray.sort(()=> Math.random() - 0.5);
+        }
+        
+        function change(num) { 
+            letters = document.getElementsByTagName("img");
+            if(state == 0)
+        {
+            shuffleArray(prizeArray);
+            state = 1;
+        }
+            letters[num].src = prizeArray[0] + ".jpg";
+            delete prizeArray[0];
+        }
+
+    </script>
+</head>
+<body>
+    <h1>숫자를 클릭하세요</h1>
+    <br>
+    <br>
+    <br>
+</body>
+<body>
+    <img src = "1.jpg" id = "num0" width="150px" onclick="change(0)">
+    <img src = "2.jpg" id = "num1" width="150px" onclick="change(1)">
+    <img src = "3.jpg" id = "num2" width="150px" onclick="change(2)">
+    <img src = "4.jpg" id = "num3" width="150px" onclick="change(3)">
+    <img src = "5.jpg" id = "num4" width="150px" onclick="change(4)">
+</body>

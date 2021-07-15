@@ -1,0 +1,60 @@
+<head>
+    <script>
+        var timerId = null;
+        var lotto_array = [5]
+
+        function Rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        function start() {
+            lotto1 = view();
+            timerId = setTimeout(start, 100);
+        }
+        function stop() {
+            sort();
+            clearTimeout(timerId);
+        }
+        function changeTo(count, id_value) {
+            myNum = document.getElementById(id_value);
+            myNum.src = "/js/img_1/" + count + ".png";
+        }
+        function view() {
+            for (i = 0; i <= 5; i++) {
+                lotto_array[i] = Rand(1,45);
+                changeTo(lotto_array[i],"num"+i);
+            }
+        }
+        function sort() 
+        {
+            for (i = 0; i <= 5; i++)
+            {
+                lotto_array[i] = Rand(1,45);
+                for (j = i; j <= 5; j++)
+                {
+                    if (lotto_array[i] > lotto_array[j]) {
+                        temp = lotto_array[j];
+                        lotto_array[i] = lotto_array[i];
+                        lotto_array[i] = temp;
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="start" onclick="start()">
+        <input type="button" value="stop" onclick="stop()">
+    </form>
+    <div>
+            <img src = "img_1/1.png" id = "num0">
+            <img src = "img_1/1.png" id = num1>
+            <img src = "img_1/1.png" id = num2>
+            <img src = "img_1/1.png" id = num3>
+            <img src = "img_1/1.png" id = num4>
+            <img src = "img_1/1.png" id = num5>
+    </div>
+</body>

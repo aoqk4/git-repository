@@ -1,0 +1,54 @@
+<head>
+    <meta charset="utf-8"></meta>
+    <h1>카드 클릭 하세요.</h1>
+</head>
+<style>
+    .outer {
+            display: flex;
+            justify-content: center;
+            margin-top: 10%;
+        }
+    img{
+        margin-right: 20px;
+        margin-left: 20px;
+        }
+</style> 
+<script>
+    function meaning (num) {
+        switch(num) {
+            case 7:
+                document.write("<h1>성공, 탄생, 축복, 약속된 장래.</h1>");
+                break;
+            case 8:
+                document.write("<h1>번영, 풍양, 모권, 애정, 정열, 풍만, 포용력, 여성적 매력, 가정의 형성.</h1>");
+                break;
+            case 9:
+                document.write("<br><h1>따뜻함, 정직함, 친절함, 페어플레이<br></h1>");
+                break;
+            case 10:
+                document.write("<br><h1>자유, 형태에 빠지지 않음, 무사기, 순수, 천진난만, 가능성, 발상력, 천재.<br></h1>");
+                break;
+            case 11:
+                document.write("<br><h1>친구와 가족의 기쁨과 내면의 평화<br></h1>");
+                break;
+
+        }
+    }
+</script>
+<body>
+    <div class="outer">
+    <img src = "7.jpg" id = "num0" width="150px" height="350px" onclick="meaning(7)">
+    <img src = "8.jpg" id = "num1" width="150px" height="350px" onclick="meaning(8)">
+    <img src = "9.jpg" id = "num2" width="150px" height="350px" onclick="meaning(9)">
+    <img src = "10.jpg" id = "num3" width="150px" height="350px" onclick="meaning(10)">
+    <img src = "11.jpg" id = "num4" width="150px" height="350px" onclick="meaning(11)">
+    </div>
+    <br>
+    <br>
+    <br>
+    <h1><p>이전 사이트로</p></h1>
+    <body>
+        <form action = "/js/ssrsite2.html" method = "post">
+            <input type="submit" value="확인"></input>
+        </form>
+</body>
